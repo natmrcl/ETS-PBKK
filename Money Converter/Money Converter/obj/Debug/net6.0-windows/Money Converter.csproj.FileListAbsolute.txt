@@ -1,0 +1,21 @@
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.csproj.AssemblyReference.cache
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\MainWindow.g.cs
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\App.g.cs
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter_MarkupCompile.cache
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter_MarkupCompile.lref
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\bin\Debug\net6.0-windows\Money Converter.exe
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\bin\Debug\net6.0-windows\Money Converter.deps.json
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\bin\Debug\net6.0-windows\Money Converter.runtimeconfig.json
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\bin\Debug\net6.0-windows\Money Converter.dll
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\bin\Debug\net6.0-windows\Money Converter.pdb
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\MainWindow.baml
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.g.resources
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.GeneratedMSBuildEditorConfig.editorconfig
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.AssemblyInfoInputs.cache
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.AssemblyInfo.cs
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.csproj.CoreCompileInputs.cache
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.dll
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\refint\Money Converter.dll
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.pdb
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.genruntimeconfig.cache
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\ref\Money Converter.dll
