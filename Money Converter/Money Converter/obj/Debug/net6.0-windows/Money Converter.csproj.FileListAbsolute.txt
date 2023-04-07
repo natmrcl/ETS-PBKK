@@ -19,3 +19,5 @@ E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\refint
 E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.pdb
 E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.genruntimeconfig.cache
 E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\ref\Money Converter.dll
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\PBKK\ETS-PBKK\Money Converter\Money Converter\obj\Debug\net6.0-windows\Money Converter.csproj.CopyComplete

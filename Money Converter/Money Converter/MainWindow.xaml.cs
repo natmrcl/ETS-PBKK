@@ -16,7 +16,10 @@ using System.Windows;
 using System.Windows.Input;
 using System.Text.RegularExpressions;
 using System.Data;
- 
+using System.IO;
+using System.Net;
+using Newtonsoft.Json.Linq;
+
 namespace Money_Converter
 {
     public partial class MainWindow : Window
@@ -24,10 +27,7 @@ namespace Money_Converter
         public MainWindow()
         {
             InitializeComponent();
-
-
             ClearControls();
-
             BindCurrency();
         }
 
@@ -35,26 +35,46 @@ namespace Money_Converter
         private void BindCurrency()
 
         {
-            DataTable dtCurrency = new DataTable();
-            dtCurrency.Columns.Add("Text");
-            dtCurrency.Columns.Add("Value");
+            
+            string appId = "dfeae187d90d4c5a97a5f9644f614c26"; // ganti dengan App ID Anda
+            string url = string.Format("https://openexchangerates.org/api/latest.json?app_id={0}", appId);
 
-            dtCurrency.Rows.Add("", 0);
-            dtCurrency.Rows.Add("INR", 1);
-            dtCurrency.Rows.Add("USD", 75);
-            dtCurrency.Rows.Add("EUR", 85);
-            dtCurrency.Rows.Add("SAR", 20);
-            dtCurrency.Rows.Add("POUND", 5);
-            dtCurrency.Rows.Add("DEM", 43);
+            try
+            {
+                WebClient webClient = new WebClient();
+                Stream stream = webClient.OpenRead(url);
+                StreamReader reader = new StreamReader(stream);
+                string jsonData = reader.ReadToEnd();
+                JObject json = JObject.Parse(jsonData);
 
-            cmbFromCurrency.ItemsSource = dtCurrency.DefaultView;
-            cmbFromCurrency.DisplayMemberPath = "Text";
-            cmbFromCurrency.SelectedValuePath = "Value";
-            cmbFromCurrency.SelectedIndex = 0;
-            cmbToCurrency.ItemsSource = dtCurrency.DefaultView;
-            cmbToCurrency.DisplayMemberPath = "Text";
-            cmbToCurrency.SelectedValuePath = "Value";
-            cmbToCurrency.SelectedIndex = 0;
+                // ambil nilai tukar dari JSON dan masukkan ke dalam DataTable
+                DataTable dtCurrency = new DataTable();
+                dtCurrency.Columns.Add("CurrencyCode", typeof(string));
+                dtCurrency.Columns.Add("ExchangeRate", typeof(decimal));
+                dtCurrency.Rows.Add("SELECT ONE", 0);
+                foreach (JProperty property in json["rates"])
+                {
+                    string currencyCode = property.Name;
+                    decimal exchangeRate = (decimal)property.Value;
+                    dtCurrency.Rows.Add(currencyCode, exchangeRate);
+                }
+
+                cmbFromCurrency.ItemsSource = dtCurrency.DefaultView;
+                cmbFromCurrency.DisplayMemberPath = "CurrencyCode";
+                cmbFromCurrency.SelectedValuePath = "ExchangeRate";
+                cmbFromCurrency.SelectedIndex = 0;
+
+                cmbToCurrency.ItemsSource = dtCurrency.DefaultView;
+                cmbToCurrency.DisplayMemberPath = "CurrencyCode";
+                cmbToCurrency.SelectedValuePath = "ExchangeRate";
+                cmbToCurrency.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+
         }
         #endregion
 
@@ -90,7 +110,7 @@ namespace Money_Converter
             }
             else
             {
-                ConvertedValue = (double.Parse(cmbFromCurrency.SelectedValue.ToString()) * double.Parse(txtCurrency.Text)) / double.Parse(cmbToCurrency.SelectedValue.ToString());
+                ConvertedValue = (double.Parse(cmbFromCurrency.SelectedValue.ToString()) * (double.Parse(txtCurrency.Text)) / double.Parse(cmbToCurrency.SelectedValue.ToString()));
                 lblCurrency.Content = cmbToCurrency.Text + " " + ConvertedValue.ToString("N3");
             }
         }
@@ -112,12 +132,6 @@ namespace Money_Converter
                 cmbToCurrency.SelectedIndex = 0;
             lblCurrency.Content = "";
             txtCurrency.Focus();
-        }
-
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("^[0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
         }
         #endregion
     }
