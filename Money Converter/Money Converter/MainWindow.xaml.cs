@@ -110,8 +110,8 @@ namespace Money_Converter
             }
             else
             {
-                ConvertedValue = (double.Parse(cmbFromCurrency.SelectedValue.ToString()) * (double.Parse(txtCurrency.Text)) / double.Parse(cmbToCurrency.SelectedValue.ToString()));
-                lblCurrency.Content = cmbToCurrency.Text + " " + ConvertedValue.ToString("N3");
+                ConvertedValue = (double.Parse(cmbToCurrency.SelectedValue.ToString()) * (double.Parse(txtCurrency.Text)) / double.Parse(cmbFromCurrency.SelectedValue.ToString()));
+                lblCurrency.Content = cmbToCurrency.Text + " " + ConvertedValue.ToString("N6");
             }
         }
 
