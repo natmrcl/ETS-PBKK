@@ -36,7 +36,7 @@ namespace Money_Converter
 
         {
             
-            string appId = "dfeae187d90d4c5a97a5f9644f614c26"; // ganti dengan App ID Anda
+            string appId = "dfeae187d90d4c5a97a5f9644f614c26"; 
             string url = string.Format("https://openexchangerates.org/api/latest.json?app_id={0}", appId);
 
             try
@@ -73,7 +73,6 @@ namespace Money_Converter
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
-
 
         }
         #endregion
